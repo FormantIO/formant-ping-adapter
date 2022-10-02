@@ -6,19 +6,18 @@ Note that the recorded ping is to an internet site, and will not necessarily ref
 
 ## Configuration
 
-The adapter requires the following configuration:
+The adapter uses the following configuration:
 
-`hostname` - The hostname or IP address to ping.
-
-`interval` - The interval in seconds between pings.
-
-`timeout` - The timeout for the ping, in seconds.
-
-`formant_stream` - The name of the stream to post the ping to.
+| Parameter      | Description                                | Default    |
+| -------------- | ------------------------------------------ | ---------- |
+| hostname       | The hostname or IP address to ping         | formant.io |
+| interval       | The interval in seconds between pings      | 5          |
+| timeout        | The timeout for the ping, in seconds       | 5          |
+| formant_stream | The name of the stream to post the ping to | ping       |
 
 ## Tags
 
-Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag.
+Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag. The hostname will also be tagged to each ping.
 
 ## Usage
 
