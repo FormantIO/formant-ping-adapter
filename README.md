@@ -10,8 +10,12 @@ The adapter requires the following configuration:
 
 `hostname` - The hostname or IP address to ping.
 
-`frequency` - The frequency at which to ping the host, in Hz.
+`interval` - The interval in seconds between pings.
 
 `timeout` - The timeout for the ping, in seconds.
 
-`stream` - The name of the stream to post the ping to.
+`formant_stream` - The name of the stream to post the ping to.
+
+## Tags
+
+Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag.

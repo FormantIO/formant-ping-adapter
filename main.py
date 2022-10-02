@@ -7,6 +7,86 @@ import jsonschema
 
 from formant.sdk.agent.v1 import Client as FormantAgentClient
 
+"""
+# Formant Ping Adapter
+
+This adapter pings a remote host and then posts the result to a Formant stream to keep track of the robot's ping over time.
+
+## Configuration
+
+The adapter requires the following configuration:
+
+`hostname` - The hostname or IP address to ping.
+
+`interval` - The interval in seconds between pings.
+
+`timeout` - The timeout for the ping, in seconds.
+
+`formant_stream` - The name of the stream to post the ping to.
+
+### Example Configuration
+
+```json
+{
+    "hostname": "google.com",
+    "interval": 60,
+    "timeout": 5,
+    "formant_stream": "ping"
+}
+```
+
+### Configuration Schema
+
+```json
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://formant.io/formant_ping_adapter_configuration.schema.json",
+    "title": "Formant Ping Adapter Configuration",
+    "description": "Configuration for the ping adapter.",
+    "type": "object",
+    "properties": {
+        "ping_adapter_configuration": {
+            "description": "The top level wrapper for ping adapter configuration.",
+            "type": "object",
+            "properties": {
+                "hostname": {
+                    "description": "The host to ping.",
+                    "type": "string",
+                    "format": "hostname"
+                },
+                "interval": {
+                    "description": "The interval in seconds between ping attempts.",
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                },
+                "timeout": {
+                    "description": "The timeout in seconds to wait for a response from the host.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "formant_stream": {
+                    "description": "The Formant stream to send the ping results to.",
+                    "type": "string"
+                }
+            },
+            "required": ["hostname", "frequency", "timeout", "formant_stream"]
+        }
+    },
+    "required": ["ros2_adapter_configuration"]
+}
+```
+
+## Tags
+
+Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag.
+
+"""
+
+DEFAULT_HOSTNAME = "formant.io"
+DEFAULT_INTERVAL = 10
+DEFAULT_TIMEOUT = 5
+DEFAULT_FORMANT_STREAM = "ping"
+
 
 class PingAdapter:
     """

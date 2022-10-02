@@ -14,11 +14,10 @@
                     "type": "string",
                     "format": "hostname"
                 },
-                "frequency": {
-                    "description": "The frequency in Hz to ping the host, between 0 and 1.",
+                "interval": {
+                    "description": "The interval in seconds between ping attempts.",
                     "type": "number",
-                    "exclusiveMinimum": 0,
-                    "maximum": 1
+                    "exclusiveMinimum": 0
                 },
                 "timeout": {
                     "description": "The timeout in seconds to wait for a response from the host.",

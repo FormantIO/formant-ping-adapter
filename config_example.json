@@ -1,7 +1,7 @@
 {
     "ping_adapter_configuration": {
         "hostname": "formant.io",
-        "frequency": 0.2,
+        "interval": 5,
         "timeout": 5,
         "formant_stream": "ping"
     }
