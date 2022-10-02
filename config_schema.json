@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://formant.io/formant_ping_adapter_configuration.schema.json",
+    "title": "Formant Ping Adapter Configuration",
+    "description": "Configuration for the ping adapter.",
+    "type": "object",
+    "properties": {
+        "ping_adapter_configuration": {
+            "description": "The top level wrapper for ping adapter configuration.",
+            "type": "object",
+            "properties": {
+                "hostname": {
+                    "description": "The host to ping.",
+                    "type": "string",
+                    "format": "hostname"
+                },
+                "frequency": {
+                    "description": "The frequency in Hz to ping the host, between 0 and 1.",
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1
+                },
+                "timeout": {
+                    "description": "The timeout in seconds to wait for a response from the host.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "formant_stream": {
+                    "description": "The Formant stream to send the ping results to.",
+                    "type": "string"
+                }
+            },
+            "required": ["hostname", "frequency", "timeout", "formant_stream"]
+        }
+    },
+    "required": ["ros2_adapter_configuration"]
+  }
