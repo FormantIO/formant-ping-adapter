@@ -32,5 +32,5 @@
             "required": []
         }
     },
-    "required": ["ros2_adapter_configuration"]
+    "required": ["ping_adapter_configuration"]
   }
