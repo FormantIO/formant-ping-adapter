@@ -19,3 +19,12 @@ The adapter requires the following configuration:
 ## Tags
 
 Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag.
+
+## Usage
+
+To use the adapter, pull down this repository and create a zip file:
+```
+zip -r ping-adapter.zip ping-adapter
+```
+
+Then, upload the zip file Formant's adapters management page and set the start script to `./start.sh`. This adapter can then be selected in device configuration.
