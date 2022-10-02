@@ -29,7 +29,7 @@
                     "type": "string"
                 }
             },
-            "required": ["hostname", "frequency", "timeout", "formant_stream"]
+            "required": []
         }
     },
     "required": ["ros2_adapter_configuration"]
