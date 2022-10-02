@@ -19,6 +19,10 @@ The adapter uses the following configuration:
 
 Successful pings will be posted with a `success: true` tag, and failed pings will be posted with a `success: false` tag. The hostname will also be tagged to each ping.
 
+## Requirements
+
+System python must be 3.7 or greater.
+
 ## Usage
 
 To use the adapter, pull down this repository and create a zip file:
